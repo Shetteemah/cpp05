@@ -1,13 +1,13 @@
 #include "Bureaucrat.hpp"
 
-        Bureaucrat();
-        Bureaucrat(const std::string &name, int grade);
-        Bureaucrat(const Bureaucrat &src);
-        ~Bureaucrat();
-        Bureaucrat &operator=(const Bureaucrat &src);
+Bureaucrat::Bureaucrat() {}
+Bureaucrat::Bureaucrat(const std::string &name, int grade) {}
+Bureaucrat::Bureaucrat(const Bureaucrat &src) {}
+Bureaucrat::~Bureaucrat() {}
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src) {}
 
-        const std::string getName() const;
-        int getGrade() const;
+const std::string Bureaucrat::getName() const {}
+int Bureaucrat::getGrade() const {}
 
-        void incrementGrade();
-        void decrementGrade();
+void Bureaucrat::incrementGrade() {}
+void Bureaucrat::decrementGrade() {}
