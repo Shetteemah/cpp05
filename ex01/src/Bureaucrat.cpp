@@ -93,4 +93,6 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat)
 }
 
 void Bureaucrat::signForm(Form *form)
-{}
+{
+    form->beSigned(this);
+}
