@@ -92,4 +92,4 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat)
     return (os);
 }
 
-        void signForm(Form *form);
+void Bureaucrat::signForm() {}
