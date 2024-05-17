@@ -2,6 +2,7 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
+#include <ctime>
 #include <string>
 #include <exception>
 #include "AForm.hpp"

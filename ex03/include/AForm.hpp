@@ -19,7 +19,7 @@ class AForm
         AForm(int signedGrade, int execGrade);
         AForm(const std::string &name, int signedGrade, int execGrade);
         AForm(const AForm &src);
-        ~AForm();
+        virtual ~AForm();
         AForm const &operator=(const AForm &src);
         const std::string getName() const;
         int getSignedGrade() const;
