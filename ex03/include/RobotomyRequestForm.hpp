@@ -7,9 +7,9 @@ class RobotomyRequestForm : public AForm
 {
     private:
         const std::string _target;
+        RobotomyRequestForm();
 
     public:
-        RobotomyRequestForm();
         RobotomyRequestForm(const std::string &target);
         RobotomyRequestForm(const RobotomyRequestForm &src);
         ~RobotomyRequestForm();
@@ -17,5 +17,7 @@ class RobotomyRequestForm : public AForm
         void execute(const Bureaucrat &exec) const;
         const std::string getTarget() const;
 };
+
+std::ostream &operator<<(std::ostream &os, const RobotomyRequestForm &form);
 
 #endif
