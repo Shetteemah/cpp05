@@ -23,7 +23,7 @@ clean:
 	$(RM) -r $(OBJ_DIR)
 
 fclean: clean
-	$(RM) -r $(OBJ_DIR) $(NAME)
+	$(RM) -r $(OBJ_DIR) $(NAME) ./*_shrubbery
 
 re: fclean all
 
