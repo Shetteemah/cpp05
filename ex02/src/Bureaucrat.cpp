@@ -92,7 +92,7 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat)
     return (os);
 }
 
-void Bureaucrat::signForm(Form *form)
+void Bureaucrat::signForm(AForm *form)
 {
     form->beSigned(this);
 }

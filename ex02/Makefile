@@ -1,4 +1,4 @@
-NAME	= Form
+NAME	= Form28B
 CC		= g++
 CFLAGS	= -Werror -Wextra -Wall -std=c++98
 INCLUDE	= -I include
