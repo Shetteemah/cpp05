@@ -3,13 +3,16 @@
 
 #include "AForm.hpp"
 
+class AForm;
+class Bureaucrat;
+
 class PresidentialPardonForm : public AForm
 {
     private:
         const std::string _target;
+        PresidentialPardonForm();
 
     public:
-        PresidentialPardonForm();
         PresidentialPardonForm(const std::string &target);
         PresidentialPardonForm(const PresidentialPardonForm &src);
         ~PresidentialPardonForm();

@@ -12,12 +12,10 @@ class AForm
         bool                _signed;
         const int           _signedGrade;
         const int           _execGrade;
+        AForm();
+        AForm(const std::string &name, int signedGrade, int execGrade);
 
     public:
-        AForm();
-        AForm(const std::string &name);
-        AForm(int signedGrade, int execGrade);
-        AForm(const std::string &name, int signedGrade, int execGrade);
         AForm(const AForm &src);
         virtual ~AForm();
         AForm const &operator=(const AForm &src);

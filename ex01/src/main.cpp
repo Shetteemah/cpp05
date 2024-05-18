@@ -4,6 +4,7 @@ int main()
 {
     try
     {
+        // std::cout << "\n" << std::endl;
         Bureaucrat john("John", 40);
         std::cout << john << std::endl;
 
@@ -121,6 +122,5 @@ int main()
     {
         std::cout << "Unhandled exception: " << e.what() << std::endl;
     }
-
     return 0;
 }

@@ -3,13 +3,16 @@
 
 #include "AForm.hpp"
 
+class AForm;
+class Bureaucrat;
+
 class RobotomyRequestForm : public AForm
 {
     private:
         const std::string _target;
+        RobotomyRequestForm();
 
     public:
-        RobotomyRequestForm();
         RobotomyRequestForm(const std::string &target);
         RobotomyRequestForm(const RobotomyRequestForm &src);
         ~RobotomyRequestForm();

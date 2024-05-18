@@ -3,6 +3,9 @@
 
 #include "AForm.hpp"
 
+class AForm;
+class Bureaucrat;
+
 class PresidentialPardonForm : public AForm
 {
     private:

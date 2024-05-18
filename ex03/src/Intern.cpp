@@ -1,4 +1,7 @@
 #include "../include/Intern.hpp"
+#include "../include/PresidentialPardonForm.hpp"
+#include "../include/RobotomyRequestForm.hpp"
+#include "../include/ShrubberyCreationForm.hpp"
 
 Intern::Intern()
 {
@@ -18,23 +21,29 @@ Intern::~Intern()
 
 Intern &Intern::operator=(const Intern &src)
 {
+    std::cout << "Intern: operator assignment initiated!" << std::endl;
     if (this == &src)
         return (*this);
     return (*this);
-    std::cout << "Intern: operator assignment done!" << std::endl;
 }
 
-AForm *Intern::makeForm(const std::string &newForm, const std::string &target)
+AForm *Intern::makeForm(const std::string &formName, const std::string &target)
 {
-    AForm *forms[] = {new PresidentialPardonForm(target), new RobotomyRequestForm(target), new ShrubberyCreationForm(target)};
+    std::string formNames[3] = {"PresidentialPardonForm", "RobotomyRequestForm", "ShrubberyCreationForm"};
+    AForm *forms[3] = {new PresidentialPardonForm(target), new RobotomyRequestForm(target), new ShrubberyCreationForm(target)};
     for (int i = 0; i < 3; i++)
-    {
-        if (newForm.compare(forms[i]->getName()) == 0)
-        {
-            std::cout << "Intern create " << *forms[i] << "!" << std::endl;
-            return (forms[i]);
+	{
+        if (formNames[i] == formName)
+		{
+            std::cout << "Intern creates " << formNames[i] << std::endl;
+            for (int j = 0; j < 3; j++)
+                if (i != j)
+                    delete forms[j];
+            return forms[i];
         }
     }
-    std::cout << newForm << " couldn't be created!" << std::endl;
-    return (0);
+    for (int i = 0; i < 3; i++)
+        delete forms[i];
+    std::cout << "Error: Form name " << formName << " is invalid!" << std::endl;
+    return (NULL);
 }

@@ -4,13 +4,16 @@
 #include <fstream>
 #include "AForm.hpp"
 
+class AForm;
+class Bureaucrat;
+
 class ShrubberyCreationForm : public AForm
 {
     private:
         const std::string _target;
+        ShrubberyCreationForm();
 
     public:
-        ShrubberyCreationForm();
         ShrubberyCreationForm(const std::string &target);
         ShrubberyCreationForm(const ShrubberyCreationForm &src);
         ~ShrubberyCreationForm();

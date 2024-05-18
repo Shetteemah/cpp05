@@ -19,15 +19,21 @@ int main()
         std::cout << lowRank << std::endl;
 
         Intern intern;
-        AForm* forms[4];
-        
-        forms[0] = intern.makeForm("presidential pardon", "Target1");
-        forms[1] = intern.makeForm("robotomy request", "Target2");
-        forms[2] = intern.makeForm("shrubbery creation", "Target3");
-        forms[3] = intern.makeForm("invalid form", "Target4");
+        // std::cout << "\n" << std::endl;
+        AForm *forms[4];
+        std::cout << "\n" << std::endl;
+
+        forms[0] = intern.makeForm("PresidentialPardonForm", "Target1");
+        std::cout << "\n" << std::endl;
+        forms[1] = intern.makeForm("RobotomyRequestForm", "Target2");
+        std::cout << "\n" << std::endl;
+        forms[2] = intern.makeForm("ShrubberyCreationForm", "Target3");
+        std::cout << "\n" << std::endl;
+        forms[3] = intern.makeForm("Haitian form", "Target4");
 
         for (int i = 0; i < 3; ++i)
         {
+            std::cout << "\n" << std::endl;
             std::cout << *forms[i] << std::endl;
         }
 
@@ -35,77 +41,82 @@ int main()
         {
             std::cout << "\nAttempt to create an invalid form" << std::endl;
             if (!forms[3])
-            {
                 std::cout << "Form creation failed as expected for invalid form type." << std::endl;
-            } else {
-                std::cout << *forms[3] << std::endl;
-            }
+            else
+                std::cout << *forms[3] << "\n" << std::endl;
         }
         catch (const std::exception &e)
         {
-            std::cout << e.what() << std::endl;
+            // std::cout << "\n" << std::endl;
+            std::cout << e.what() << "\n" << std::endl;
         }
 
-        std::cout << "\nSign and execute forms with different Bureaucrats tests" << std::endl;
+        std::cout << "\nSign and execute forms with different Bureaucrats tests\n" << std::endl;
         for (int i = 0; i < 3; ++i)
         {
-            std::cout << "\nProcessing form: " << forms[i]->getName() << std::endl;
+            std::cout << "Processing form: " << forms[i]->getName() << "\n" << std::endl;
             try
             {
                 lowRank.signForm(forms[i]);
                 lowRank.executeForm(*forms[i]);
+                std::cout << "\n" << std::endl;
             }
             catch (const std::exception &e)
             {
-                std::cout << e.what() << std::endl;
+                std::cout << e.what() << "\n" << std::endl;
             }
 
             try
             {
                 midRank.signForm(forms[i]);
                 midRank.executeForm(*forms[i]);
+                std::cout << "\n" << std::endl;
             }
             catch (const std::exception &e)
             {
-                std::cout << e.what() << std::endl;
+                std::cout << e.what() << "\n" << std::endl;
             }
 
             try
             {
                 highRank.signForm(forms[i]);
                 highRank.executeForm(*forms[i]);
+                std::cout << "\n" << std::endl;
             }
             catch (const std::exception &e)
             {
-                std::cout << e.what() << std::endl;
+                std::cout << e.what() << "\n" << std::endl;
             }
         }
 
         for (int i = 0; i < 3; ++i)
         {
+            std::cout << "\n" << std::endl;
             delete forms[i];
         }
         
-        std::cout << "\ninvalid Bureaucrat grades tests" << std::endl;
+        std::cout << "\ninvalid Bureaucrat grades tests\n" << std::endl;
         try
         {
             Bureaucrat invalidHigh("InvalidHigh", 0);
+            std::cout << "\n" << std::endl;
         }
         catch (const std::exception &e)
         {
-            std::cout << e.what() << std::endl;
+            std::cout << e.what() << "\n" << std::endl;
         }
 
         try
         {
             Bureaucrat invalidLow("InvalidLow", 151);
+            std::cout << "\n" << std::endl;
         }
         catch (const std::exception &e)
         {
             std::cout << e.what() << std::endl;
         }
 
-        std::cout << "\nEdge cases tests" << std::endl;
+        std::cout << "\nEdge cases tests\n" << std::endl;
         try
         {
             Bureaucrat edgeHigh("EdgeHigh", 1);
@@ -120,6 +131,7 @@ int main()
 
             edgeLow.incrementGrade();
             edgeLow.signForm(&form);
+            std::cout << "\n" << std::endl;
         }
         catch (const std::exception &e)
         {
