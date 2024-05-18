@@ -1,6 +1,6 @@
-#include "PresidentialPardonForm.hpp"
-#include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "../include/PresidentialPardonForm.hpp"
+#include "../include/Bureaucrat.hpp"
+#include "../include/AForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm() : AForm("Presidential Pardon Form", 25, 5), _target("default") 
 {

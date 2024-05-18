@@ -27,7 +27,7 @@ Intern &Intern::operator=(const Intern &src)
     return (*this);
 }
 
-AForm *Intern::makeForm(const std::string &formName, const std::string &target)
+AForm *Intern::makeForm(const std::string formName, const std::string target)
 {
     std::string formNames[3] = {"PresidentialPardonForm", "RobotomyRequestForm", "ShrubberyCreationForm"};
     AForm *forms[3] = {new PresidentialPardonForm(target), new RobotomyRequestForm(target), new ShrubberyCreationForm(target)};
