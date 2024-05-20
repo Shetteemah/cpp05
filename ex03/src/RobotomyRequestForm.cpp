@@ -1,11 +1,28 @@
-#include "RobotomyRequestForm.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sheali <sheali@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/20 22:53:34 by sheali            #+#    #+#             */
+/*   Updated: 2024/05/20 22:56:48 by sheali           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy Request Form", 72, 45), _target("default")
+#include "../include/Bureaucrat.hpp"
+#include "../include/AForm.hpp"
+#include "../include/PresidentialPardonForm.hpp"
+#include "../include/RobotomyRequestForm.hpp"
+#include "../include/ShrubberyCreationForm.hpp"
+#include "../include/Intern.hpp"
+
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45), _target("default")
 {
     std::cout << "RobotomyRequestForm: " << this->getName() << " created!" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("Robotomy Request Form", 72, 45), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("RobotomyRequestForm", 72, 45), _target(target)
 {
     if (this->getSignedGrade() < 1 || this->getExecGrade() < 1)
         throw GradeTooHighException();
@@ -13,7 +30,7 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("Rob
         throw GradeTooLowException();
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src) : AForm("Robotomy Request Form", 72, 45), _target(src.getTarget())
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src) : AForm("RobotomyRequestForm", 72, 45), _target(src.getTarget())
 {
     std::cout << "RobotomyRequestForm: copy constructor initiated" << std::endl;
     std::cout << src.getName() << " Successfully copied to " << this->getName() << "!" << std::endl;

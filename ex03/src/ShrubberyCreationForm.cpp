@@ -1,11 +1,28 @@
-#include "ShrubberyCreationForm.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sheali <sheali@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/20 22:53:37 by sheali            #+#    #+#             */
+/*   Updated: 2024/05/20 22:56:43 by sheali           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shrubbery Form", 145, 137), _target("default")
+#include "../include/Bureaucrat.hpp"
+#include "../include/AForm.hpp"
+#include "../include/PresidentialPardonForm.hpp"
+#include "../include/RobotomyRequestForm.hpp"
+#include "../include/ShrubberyCreationForm.hpp"
+#include "../include/Intern.hpp"
+
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137), _target("default")
 {
     std::cout << "ShrubberyCreationForm: " << this->getName() << " created!" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("Shrubbery Form", 145, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
     if (this->getSignedGrade() < 1 || this->getExecGrade() < 1)
         throw GradeTooHighException();
@@ -13,7 +30,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm(
         throw GradeTooLowException();
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src) : AForm("Shrubbery Form", 145, 137), _target(src.getTarget())
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src) : AForm("ShrubberyCreationForm", 145, 137), _target(src.getTarget())
 {
     std::cout << "ShrubberyCreationForm: copy constructor initiated" << std::endl;
     std::cout << src.getName() << " Successfully copied to " << this->getName() << "!" << std::endl;

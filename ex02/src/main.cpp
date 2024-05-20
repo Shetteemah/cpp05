@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sheali <sheali@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/20 22:02:00 by sheali            #+#    #+#             */
+/*   Updated: 2024/05/20 23:10:47 by sheali           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/Bureaucrat.hpp"
 #include "../include/AForm.hpp"
 #include "../include/PresidentialPardonForm.hpp"
@@ -135,5 +147,5 @@ int main()
         std::cerr << "Exception caught: " << e.what() << std::endl;
     }
 
-    return 0;
+    return (0);
 }
